@@ -5,6 +5,6 @@ RUN mvn clean package -DskipTests
 
 # Stage 2: Run stage
 FROM openjdk:21-jdk-slim
-COPY --from=build /target/chat-app-backend-0.0.1-SNAPSHOT.jar chat-app-backend.jar
+COPY --from=build /target/chat-app-backend-0.0.1-SNAPSHOT.jar /chat-app-backend.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "chat-app-backend.jar"]
